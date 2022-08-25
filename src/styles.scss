@@ -20,3 +20,7 @@ input.larger-checkbox {
 .list-height {
     height: calc(100vh - 250px);
 }
+
+textarea {
+    resize: none;
+}
