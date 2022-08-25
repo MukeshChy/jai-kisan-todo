@@ -1,0 +1,27 @@
+<div class="d-flex flex-column justify-content-between">
+    <ul class="list-group overflow-auto list-height">
+        <ng-container *ngFor="let task of tasks">
+            <li class="list-group-item p-0 border-0">
+                <div class="input-group">
+                    <div class="input-group-prepend d-flex flex-column">
+                        <input type="checkbox" class="my-auto larger-checkbox cursor-pointer" [(ngModel)]="task.isCompleted" (change)="markAsComplete(task)"> 
+                    </div>
+                    <textarea class="form-control border-left-0 border-right-0 border-top-0 mx-2 py-3" rows="1" type="text" [(ngModel)]="task.text" (keyup.enter)="addTask()"></textarea>
+                    <div class="input-group-append px-2 ml-1">
+                        <button class="btn"(click)="deleteTask(task.id)">
+                            <i class="far fa-times-circle text-danger m-auto cursor-pointer"></i>
+                        </button>
+                    </div>
+                </div>          
+            </li>
+        </ng-container>
+
+    
+    </ul>
+    <div class="input-group mt-3">
+        <input type="text" class="form-control" placeholder="Add new task." [(ngModel)]="newTask" (keyup.enter)="addTask()">
+        <div class="input-group-append">
+            <button class="btn btn-outline-success" type="button" (click)="addTask()">Add</button>
+        </div>
+    </div>
+</div>

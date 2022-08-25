@@ -1,0 +1,17 @@
+<div class="d-flex flex-column h-100">
+    <h2 class="mx-auto my-3">TODO</h2>
+    <div class="col-md-12 border  row border-top mx-0">
+        
+        <div class="col-md-6 d-flex flex-column py-4 border-right">
+            <h5 class="mx-auto text-danger border-bottom mb-4">Pending Tasks</h5>
+            <app-pending [tasks]="pendingTasks"></app-pending>
+        </div>
+        
+        <div class="col-md-6 py-4 d-flex flex-column">
+            <h5 class="mx-auto text-success border-bottom mb-4">Completed Tasks</h5>
+            <app-completed [tasks]="completedTasks"></app-completed>
+        </div>
+
+    </div>
+
+</div>
